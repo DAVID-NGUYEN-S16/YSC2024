@@ -65,9 +65,9 @@ class RTLoss(nn.Module):
                             
         '''
         
-        Tagging = torch.tensor(Tagging, dtype=torch.float32).to(self.device)
+        Tagging = torch.tensor(Tagging, dtype=torch.float32).to(pt.device)
                 
-        total_loss = torch.tensor(0, dtype= torch.float32).to(self.device)
+        total_loss = torch.tensor(0, dtype= torch.float32).to(pt.device)
         
         N = pt.shape[0]
                 
@@ -87,8 +87,8 @@ class BaseLoss(nn.Module):
         
         batch_size = start_logits.shape[0]
         
-        start_zero = torch.zeros(start_logits.shape)
-        end_zero = torch.zeros(start_logits.shape)
+        start_zero = torch.zeros(start_logits.shape).to(start_logits.device)
+        end_zero = torch.zeros(start_logits.shape).to(start_logits.device)
 
         for batch, y in enumerate(start_positions):
             start_zero[batch][y][0] = 1
