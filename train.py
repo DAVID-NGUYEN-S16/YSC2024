@@ -101,7 +101,7 @@ def main():
 
     
     optimizer_cls = setting_optimizer(config=config)
-    
+    print(config.adam_beta1)
     optimizer = optimizer_cls(
         model.parameters(),
         lr=config.learning_rate,
