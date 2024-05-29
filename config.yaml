@@ -7,6 +7,7 @@ model_name :  "nguyenvulebinh/vi-mrc-base"
 path_fineturn_model : null
 output_dir : "output_weight"
 seed : 40
+logging_dir : "logs"
 train_batch_size : 50
 num_train_epochs : 100
 gradient_accumulation_steps : 40
