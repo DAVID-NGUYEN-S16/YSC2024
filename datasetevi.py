@@ -59,7 +59,7 @@ class Data(Dataset):
         return str(claim), str(context), label, ids
 def load_data(config, tokenizer):
     train_data = pd.read_csv(config.data.train).reset_index()
-    test_data = pd.read_csv(config.data.test).reset_index()
+    test_data = pd.read_csv(config.data.eval).reset_index()
     train_df = train_data
     test_df = test_data
     
