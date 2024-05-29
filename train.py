@@ -166,8 +166,7 @@ def main():
                 
                 for key in batch:
                     batch[key] = batch[key].to(accelerator.device)
-                Tagging = torch.tensor(batch['Tagging'], dtype=torch.float32)
-                Tagging = Tagging.clone().detach().to(torch.float32)
+                Tagging = batch['Tagging'].to(torch.float32)
                 # Predict the noise residual and compute loss
                 pt, start_logits, end_logits = model(input_ids = batch['input_ids'], attention_mask = batch['attention_mask'])
 
