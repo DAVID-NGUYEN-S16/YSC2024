@@ -1,6 +1,6 @@
 from transformers.models.roberta.modeling_roberta import *
 from transformers import AutoTokenizer, RobertaModel
-from .loss import Rational_Tagging
+from loss import Rational_Tagging
 # Code model baseline 
 class ModelQA(nn.Module):
     def __init__(self, config):
