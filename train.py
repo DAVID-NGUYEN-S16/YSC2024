@@ -29,7 +29,7 @@ def load_models(config):
         tokenizer = AutoTokenizer.from_pretrained(config.model_name)
         count_parameters(model)
         
-        return model
+        return model, tokenizer
 def collate_fn(examples):
     pixel_values = torch.stack([example["pixel_values"] for example in examples])
     pixel_values = pixel_values.to(memory_format=torch.contiguous_format).float()
@@ -100,7 +100,7 @@ def main():
             os.makedirs(config.output_dir, exist_ok=True)
 
 
-    model = load_models(config)
+    model, tokenizer = load_models(config)
     
 
     
@@ -113,7 +113,7 @@ def main():
         eps=config.adam_epsilon,
     )
 
-    train_dataset, test_dataset = load_data(config)
+    train_dataset, test_dataset = load_data(config, tokenizer)
     train_dataloader = DataLoader(
         train_dataset,
         shuffle=True,
