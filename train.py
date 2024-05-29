@@ -122,7 +122,7 @@ def main():
         collate_fn=default_data_collator,
         batch_size=config.train_batch_size
     )
-    lambda1 = lambda epoch: 1/math.sqrt(epoch + 1) *config.learning_rate
+    lambda1 = lambda epoch: 1/math.sqrt(epoch + 1) 
     lr_scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda1)
     
     if config.path_fineturn_model:
