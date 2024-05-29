@@ -65,9 +65,9 @@ class RTLoss(nn.Module):
                             
         '''
         
-        Tagging = torch.tensor(Tagging, dtype=torch.float32).to(device)
+        Tagging = torch.tensor(Tagging, dtype=torch.float32).to(self.device)
                 
-        total_loss = torch.tensor(0, dtype= torch.float32).to(device)
+        total_loss = torch.tensor(0, dtype= torch.float32).to(self.device)
         
         N = pt.shape[0]
                 

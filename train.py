@@ -115,13 +115,13 @@ def main():
         train_dataset,
         shuffle=True,
         collate_fn=default_data_collator,
-        batch_size=config.batch_size,
+        batch_size=config.train_batch_size,
     )
     
     eval_dataloader = DataLoader(
         test_dataset,
         collate_fn=default_data_collator,
-        batch_size=config.batch_size
+        batch_size=config.train_batch_size
     )
     lambda1 = lambda epoch: 1/math.sqrt(epoch + 1) *config.learning_rate
     lr_scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda1)
