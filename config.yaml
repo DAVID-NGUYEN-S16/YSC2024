@@ -1,0 +1,29 @@
+wandb:
+  key_wandb: ac12c873f730f05f115d320f73a1a908c5db8470
+  project: "Find-Evidence-UIT"
+  tags: "Full-Data"
+  name: "Find-Evidence-Classify"
+model_name :  "MoritzLaurer/ernie-m-large-mnli-xnli"
+n_classes: 2
+path_fineturn_model : null
+output_dir : "output_weight"
+seed : 40
+logging_dir : "logs"
+train_batch_size : 300
+num_train_epochs : 100
+gradient_accumulation_steps : 4
+use_8bit_adam: null
+learning_rate : 1e-4
+max_grad_norm : 1.0
+adam_beta1 : 0.9
+adam_beta2 : 0.999
+adam_weight_decay : 1e-2
+adam_epsilon : 1e-08
+mixed_precision : 'no'
+report_to : "wandb"
+alpha: 0.25
+gamma: 2
+reduction: 'mean'
+data:
+  train:  '/kaggle/input/data-top5/train_top5.csv'
+  eval: '/kaggle/input/data-top5/test_top5.csv'
