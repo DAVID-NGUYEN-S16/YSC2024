@@ -15,9 +15,9 @@ from torch.utils.data import DataLoader
 from accelerate import notebook_launcher
 import gc
 import wandb
-from .model import ModelQA
-from .datasetUIT import load_data
-from .loss import comboLoss
+from model import ModelQA
+from datasetUIT import load_data
+from loss import comboLoss
 def count_parameters(model):
     total_params = sum(p.numel() for p in model.parameters())
     print(f"Total number of parameters: {total_params}")
