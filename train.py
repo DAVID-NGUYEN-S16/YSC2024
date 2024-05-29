@@ -151,7 +151,7 @@ def main():
         disable=not accelerator.is_local_main_process,
     )
     loss_fn = comboLoss(alpha = 1, beta = 2 )
-    min_loss = None
+    min_loss = 1000
     
     for epoch in range(config.num_train_epochs):
 
