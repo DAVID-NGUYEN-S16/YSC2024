@@ -4,22 +4,17 @@ import os
 import torch
 import torch.nn.functional as F
 import torch.utils.checkpoint
-import transformers
 from accelerate import Accelerator
 from accelerate.logging import get_logger
 from accelerate.utils import ProjectConfiguration, set_seed
 from tqdm import tqdm
-from utils import load_config, deepspeed_zero_init_disabled_context_manager
-from transformers import AutoModelForQuestionAnswering, default_data_collator, get_scheduler
+from utils import load_config
+from transformers import default_data_collator
 from torch.utils.data import DataLoader
 
 from accelerate import notebook_launcher
-import torch.multiprocessing as mp
 import gc
 import wandb
-from accelerate.utils import GradientAccumulationPlugin
-from multilingual_clip import pt_multilingual_clip
-from safetensors.torch import load_model, save_model
 from .model import ModelQA
 from .datasetUIT import load_data
 from .loss import comboLoss
