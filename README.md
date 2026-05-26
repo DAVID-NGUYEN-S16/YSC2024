@@ -5,9 +5,10 @@
 </p>
 
 # **SemViQA: A Semantic Question Answering System for Vietnamese Information Fact-Checking**  
+> 🎉 **News:** SemViQA has been officially accepted to the **ACL 2026 Industry Track**.
 
 ### **Authors**:  
-[**Dien X. Tran**](https://github.com/xndien2004), [**Nam V. Nguyen**](https://github.com/DAVID-NGUYEN-S16), Thanh T. Tran, Anh T. Hoang, Tai V. Duong, Di T. Le, Phuc-Lu Le 
+[**Dien X. Tran**](https://github.com/xndien2004)\*, [**Nam V. Nguyen**](https://github.com/DAVID-NGUYEN-S16)\*, Thanh T. Tran, Anh T. Hoang, Tai V. Duong, Di T. Le, Phuc-Lu Le 
 <p align="center">
   <a href="https://arxiv.org/abs/2503.00955">
     <img src="https://img.shields.io/badge/arXiv-2411.00918-red?style=flat&label=arXiv">
